@@ -1,7 +1,7 @@
 # TypeScript project structure
 
 This repo it's a typescript structure project for express including eslint, unit testing with
-jasmine
+jasmine and postgresql conection
 
 ```
 .
@@ -23,6 +23,7 @@ jasmine
 │   │   │   └── resporter.ts
 │   │   └── indexSpec.ts
 │   └── utilities			//Utilities functions folders
+│       └── database.ts			//Database conection parameters
 └── tsconfig.json			//TypeScript folder
 
 ```
@@ -63,14 +64,14 @@ jasmine
 
 ### Scripts
 
-| Script       | Code                                                    | Description                                                       |
-| ------------ | ------------------------------------------------------- | ----------------------------------------------------------------- |
-| _build_      | npx tsc                                                 | Build TS code to JS in `./dist` folder                            |
-| _lint_       | eslint . --ext .ts                                      | Lint code with `eslint` rules                                     |
-| _prettier-f_ | prettier --config .prettierrc 'src/\*_/_.ts' --write    | Prettier TS files in `./src` folder                               |
+| Script         | Code                                                      | Description                                                          |
+| -------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
+| _build_      | npx tsc                                                   | Build TS code to JS in `./dist` folder                             |
+| _lint_       | eslint . --ext .ts                                        | Lint code with `eslint` rules                                      |
+| _prettier-f_ | prettier --config .prettierrc 'src/\*_/_.ts' --write    | Prettier TS files in `./src` folder                                |
 | _prettier-w_ | onchange 'src/\*_/_.ts' -- prettier --write {{changed}} | Prettier TS files in `./src` folder inmediatly when file changes  |
-| _fbuild_     | npm run prettier-f && npm run lint && npx tsc           | Run all command at once                                           |
-| _jasmine_    | jasmine                                                 | Run unit tests                                                    |
-| _test_       | npm run build && npm run jasmine                        | Transpille code and run unit tests                                |
-| _dev_        | DEBUG=API:\* nodemon src/index.ts                       | Run nodemon and debug to debug code                               |
-| _start_      | nodemon src/index.ts                                    | Start the project withouth logs in console                        |
+| _fbuild_     | npm run prettier-f && npm run lint && npx tsc             | Run all command at once                                              |
+| _jasmine_    | jasmine                                                   | Run unit tests                                                       |
+| _test_       | npm run build && npm run jasmine                          | Transpille code and run unit tests                                   |
+| _dev_        | DEBUG=API:\* nodemon src/index.ts                         | Run nodemon and debug to debug code                                  |
+| _start_      | nodemon src/index.ts                                      | Start the project withouth logs in console                           |
