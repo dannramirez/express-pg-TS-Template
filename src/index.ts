@@ -1,6 +1,8 @@
 import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
+
 import chalk from 'chalk';
-import 'dotenv/config';
 import Debug from 'debug';
 const debug = Debug('API:Express');
 
