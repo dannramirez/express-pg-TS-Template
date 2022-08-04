@@ -28,6 +28,32 @@ jasmine and postgresql conection
 
 ```
 
+### SSL
+
+If db conection need a ssl certified you need to opload to SSL folder and the code in /utilities.ts/database.ts add corresponding cert.
+
+```
+ssl: {
+    rejectUnauthorized: false,
+    ca: fs.readFileSync('/path/to/server-certificates/root.crt').toString(),
+    key: fs.readFileSync('/path/to/client-key/postgresql.key').toString(),
+    cert: fs.readFileSync('/path/to/client-certificates/postgresql.crt').toString(),
+  };
+```
+
+### Enviroment variables
+
+Create .env file whit next 
+
+```
+PORT
+POSTGRES_HOST
+POSTGRES_DB
+POSTGRES_USER
+POSTGRES_PASSWORD
+POSTGRES_PORT
+```
+
 ### Dev-Dependencies
 
 | Dependencie                      | Version |
